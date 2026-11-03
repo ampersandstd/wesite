@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudioAmpersand (Ampersand.std) | Official Website</title>
+  <link rel="icon" type="image/png" href="4441.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-black selection:text-white">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="4439.jpg" alt="Ampersand.std Logo" class="w-10 h-10 object-contain border border-zinc-200 group-hover:border-black transition">
+        <div class="flex flex-col">
+          <span class="text-sm sm:text-base font-black tracking-tight text-black leading-none">Ampersand.std</span>
+          <span class="text-[10px] text-zinc-500 tracking-widest uppercase mt-0.5">StudioAmpersand</span>
+        </div>
+      </a>
+
+      <!-- PC用ナビゲーション -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-zinc-600">
+        <a href="#news" class="hover:text-black transition">News</a>
+        <a href="#business" class="hover:text-black transition">Business</a>
+        <a href="#talents" class="hover:text-black transition">Talents</a>
+        <a href="#works" class="hover:text-black transition">Works</a>
+        <a href="#about" class="hover:text-black transition">About</a>
+        <a href="#contact" class="px-5 py-2 border-2 border-black bg-black text-white font-bold hover:bg-white hover:text-black transition">Contact</a>
+      </nav>
+
+      <!-- スマホ用ハンバーガーボタン -->
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-zinc-700 hover:text-black focus:outline-none" aria-label="メニューを開く">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- スマホ用ドロップダウンメニュー -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-zinc-200 px-6 py-6 space-y-4 shadow-xl">
+      <a href="#news" onclick="closeMobileMenu()" class="block text-base font-bold text-zinc-800 hover:text-black py-2 border-b border-zinc-100">News（お知らせ）</a>
+      <a href="#business" onclick="closeMobileMenu()" class="block text-base font-bold text-zinc-800 hover:text-black py-2 border-b border-zinc-100">Business（事業内容）</a>
+      <a href="#talents" onclick="closeMobileMenu()" class="block text-base font-bold text-zinc-800 hover:text-black py-2 border-b border-zinc-100">Talents（所属タレント）</a>
+      <a href="#works" onclick="closeMobileMenu()" class="block text-base font-bold text-zinc-800 hover:text-black py-2 border-b border-zinc-100">Works（制作実績）</a>
+      <a href="#about" onclick="closeMobileMenu()" class="block text-base font-bold text-zinc-800 hover:text-black py-2 border-b border-zinc-100">About（スタジオ概要）</a>
+      <a href="#contact" onclick="closeMobileMenu()" class="block w-full text-center py-3 mt-4 bg-black text-white font-black text-sm">Contact（お問い合わせ）</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-28 pb-16 md:pt-40 md:pb-24 px-5 sm:px-6 overflow-hidden bg-white">
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <div class="inline-block mb-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,0.08)]">
+        <img src="4441.png" alt="StudioAmpersand Logo" class="w-40 h-40 md:w-52 md:h-52 object-contain mx-auto">
+      </div>
+
+      <p class="text-zinc-500 font-bold tracking-widest uppercase text-[11px] md:text-xs mb-3">Creative Production &amp; Talent Agency</p>
+      <h1 class="text-2xl sm:text-3xl md:text-5xl font-black text-black tracking-tight leading-snug md:leading-tight mb-6">
+        物語と体験を繋ぎ、<br class="sm:hidden">新しい熱狂を創る。
+      </h1>
+      <p class="text-zinc-600 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-10">
+        StudioAmpersand（Ampersand.std）は、VTuber・声優のタレントプロデュース、インディーゲーム開発、およびTRPGシナリオ制作を手掛けるクリエイティブスタジオです。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+        <a href="#talents" class="w-full sm:w-auto px-8 py-3.5 bg-black text-white text-sm font-bold hover:bg-zinc-800 transition">
+          所属タレントを見る
+        </a>
+        <a href="#contact" class="w-full sm:w-auto px-8 py-3.5 bg-white border-2 border-black text-black text-sm font-bold hover:bg-zinc-100 transition">
+          お仕事のご依頼はこちら
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#f4f4f5_1px,transparent_1px),linear-gradient(to_bottom,#f4f4f5_1px,transparent_1px)] bg-[size:3rem_3rem] md:bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+  </section>
+
+  <!-- NEWS SECTION (新着情報ブロック：メインビジュアルのすぐ下に配置) -->
+  <section id="news" class="py-12 px-5 sm:px-6 bg-zinc-50 border-y border-zinc-200">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center justify-between mb-6">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-black tracking-widest text-white bg-black px-3 py-1 uppercase">NEWS</span>
+          <h2 class="text-sm md:text-base font-bold text-black">最新情報・お知らせ</h2>
+        </div>
+        <span class="text-xs text-zinc-400 font-medium">更新情報一覧</span>
+      </div>
+
+      <!-- ニュースリスト（最大3〜4件をスッキリ表示） -->
+      <div class="bg-white border-2 border-zinc-200 divide-y divide-zinc-200 text-xs sm:text-sm">
+        
+        <!-- ニュース項目 1 -->
+        <a href="#" class="block p-4 sm:p-5 hover:bg-zinc-50 transition flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+          <div class="flex items-center gap-4">
+            <time datetime="2026-11-03" class="text-zinc-400 font-bold shrink-0">2026.11.03</time>
+            <span class="text-[11px] font-bold bg-zinc-100 border border-zinc-300 px-2 py-0.5 text-zinc-700 shrink-0">INFO</span>
+            <p class="font-bold text-black group-hover:underline">StudioAmpersandの公式サイト（β版）を公開しました。</p>
+          </div>
+          <span class="text-xs font-bold text-zinc-400 self-end sm:self-auto group-hover:text-black">詳細 ↗</span>
+        </a>
+
+        <!-- ニュース項目 2 -->
+        <a href="#" class="block p-4 sm:p-5 hover:bg-zinc-50 transition flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+          <div class="flex items-center gap-4">
+            <time datetime="2026-10-28" class="text-zinc-400 font-bold shrink-0">2026.10.28</time>
+            <span class="text-[11px] font-bold bg-black text-white px-2 py-0.5 shrink-0">VOICE</span>
+            <p class="font-bold text-black group-hover:underline">所属タレントの新着シチュエーションボイスパックがBOOTHにて販売開始。</p>
+          </div>
+          <span class="text-xs font-bold text-zinc-400 self-end sm:self-auto group-hover:text-black">詳細 ↗</span>
+        </a>
+
+        <!-- ニュース項目 3 -->
+        <a href="#" class="block p-4 sm:p-5 hover:bg-zinc-50 transition flex flex-col sm:flex-row sm:items-center justify-between gap-2 group">
+          <div class="flex items-center gap-4">
+            <time datetime="2026-10-15" class="text-zinc-400 font-bold shrink-0">2026.10.15</time>
+            <span class="text-[11px] font-bold bg-zinc-100 border border-zinc-300 px-2 py-0.5 text-zinc-700 shrink-0">TRPG</span>
+            <p class="font-bold text-black group-hover:underline">新作エモクロアTRPGシナリオの頒布を開始しました。</p>
+          </div>
+          <span class="text-xs font-bold text-zinc-400 self-end sm:self-auto group-hover:text-black">詳細 ↗</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Section -->
+  <section id="business" class="py-16 md:py-20 px-5 sm:px-6 max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b-2 border-black pb-5">
+      <div>
+        <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Our Services</span>
+        <h2 class="text-2xl md:text-3xl font-black text-black mt-1">BUSINESS</h2>
+      </div>
+      <p class="text-zinc-600 text-xs md:text-sm font-medium mt-2 md:mt-0">3つの領域を軸としたコンテンツプロデュース</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 md:gap-6">
+      <div class="bg-white border-2 border-zinc-200 p-6 md:p-8 hover:border-black transition">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-zinc-400 font-black text-xs tracking-widest">01 / TALENT &amp; VOICE</span>
+          <span class="w-3 h-3 rounded-full border-2 border-black"></span>
+        </div>
+        <h3 class="text-lg md:text-xl font-bold text-black mb-3">VTuber運営・音声作品制作</h3>
+        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed">
+          所属・提携VTuberおよび声優のマネジメント、配信サポート、シチュエーションボイス等のデジタル音声コンテンツの企画・収録・販売を行っています。企業案件やPR配信のご依頼も承ります。
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-zinc-200 p-6 md:p-8 hover:border-black transition">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-zinc-400 font-black text-xs tracking-widest">02 / GAME DEV</span>
+          <span class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-black"></span>
+        </div>
+        <h3 class="text-lg md:text-xl font-bold text-black mb-3">インディーゲーム企画・開発</h3>
+        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed">
+          Steam等のPCプラットフォームに向けたオリジナルインディーゲームの企画・システム開発・シナリオ制作を行っています。世界観の構築からグッズ展開まで一貫したプロデュースを手掛けます。
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-zinc-200 p-6 md:p-8 hover:border-black transition">
+        <div class="flex items-center justify-between mb-5">
+          <span class="text-zinc-400 font-black text-xs tracking-widest">03 / SCENARIO</span>
+          <span class="w-3 h-3 border-2 border-black"></span>
+        </div>
+        <h3 class="text-lg md:text-xl font-bold text-black mb-3">TRPG・マダミス制作</h3>
+        <p class="text-zinc-600 text-xs md:text-sm leading-relaxed">
+          エモクロアTRPGやマーダーミステリー、ストーリープレイング等のテーブルトークシナリオおよびオンラインセッション用素材（ココフォリア・フーダン部屋等）の制作・頒布を行っています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Talents Section -->
+  <section id="talents" class="py-16 md:py-24 px-5 sm:px-6 bg-zinc-50 border-t border-zinc-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b-2 border-black pb-5">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Affiliated Creators</span>
+          <h2 class="text-2xl md:text-3xl font-black text-black mt-1">TALENTS</h2>
+        </div>
+        <p class="text-zinc-600 text-xs md:text-sm font-medium mt-2 md:mt-0">所属・提携タレント紹介</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Talent 1 -->
+        <div class="bg-white border-2 border-zinc-200 hover:border-black transition flex flex-col sm:flex-row overflow-hidden shadow-sm group">
+          <div class="sm:w-2/5 h-64 sm:h-auto bg-zinc-100 border-b sm:border-b-0 sm:border-r border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium p-4 text-center">
+            [タレント1 立ち絵画像]
+          </div>
+          <div class="sm:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-black bg-zinc-100 border border-zinc-300 px-2.5 py-0.5 uppercase">VTuber / Voice Actor</span>
+              <h3 class="text-xl md:text-2xl font-black text-black mt-3 mb-1">タレント名 01</h3>
+              <p class="text-xs font-bold text-zinc-400 tracking-wider uppercase mb-4">TALENT NAME 01</p>
+              <p class="text-zinc-600 text-xs md:text-sm leading-relaxed mb-6">
+                シチュエーションボイスやASMR、フィットネス音声作品などを中心に活動。透明感のある声質とリアルな距離感の演技で作品を彩ります。
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex flex-wrap gap-4 text-xs font-bold text-zinc-500">
+                <a href="#" class="hover:text-black transition">YouTube ↗</a>
+                <a href="#" class="hover:text-black transition">X (Twitter) ↗</a>
+                <a href="#" class="hover:text-black transition">BOOTH ↗</a>
+              </div>
+              <a href="talent-1.html" class="block w-full text-center py-3 bg-black text-white text-xs font-bold tracking-wider hover:bg-zinc-800 transition">
+                VIEW PROFILE（詳細ページへ） →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Talent 2 -->
+        <div class="bg-white border-2 border-zinc-200 hover:border-black transition flex flex-col sm:flex-row overflow-hidden shadow-sm group">
+          <div class="sm:w-2/5 h-64 sm:h-auto bg-zinc-100 border-b sm:border-b-0 sm:border-r border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium p-4 text-center">
+            [タレント2 立ち絵画像]
+          </div>
+          <div class="sm:w-3/5 p-6 md:p-8 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-black bg-zinc-100 border border-zinc-300 px-2.5 py-0.5 uppercase">VTuber / Streamer</span>
+              <h3 class="text-xl md:text-2xl font-black text-black mt-3 mb-1">タレント名 02</h3>
+              <p class="text-xs font-bold text-zinc-400 tracking-wider uppercase mb-4">TALENT NAME 02</p>
+              <p class="text-zinc-600 text-xs md:text-sm leading-relaxed mb-6">
+                ゲーム実況や企画配信、TRPGセッション配信などを中心に活動。親しみやすいトークと高い企画力でリスナーを巻き込む配信を展開中。
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex flex-wrap gap-4 text-xs font-bold text-zinc-500">
+                <a href="#" class="hover:text-black transition">YouTube ↗</a>
+                <a href="#" class="hover:text-black transition">X (Twitter) ↗</a>
+              </div>
+              <a href="talent-2.html" class="block w-full text-center py-3 bg-black text-white text-xs font-bold tracking-wider hover:bg-zinc-800 transition">
+                VIEW PROFILE（詳細ページへ） →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works Section -->
+  <section id="works" class="py-16 md:py-24 px-5 sm:px-6 bg-white border-y border-zinc-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 border-b-2 border-black pb-5">
+        <div>
+          <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Production Portfolio</span>
+          <h2 class="text-2xl md:text-3xl font-black text-black mt-1">WORKS</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 mt-5 md:mt-0">
+          <button onclick="filterWorks('all')" class="tab-btn px-4 py-2 text-xs font-bold bg-black text-white transition" data-filter="all">ALL</button>
+          <button onclick="filterWorks('game')" class="tab-btn px-4 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black hover:text-black transition" data-filter="game">GAMES</button>
+          <button onclick="filterWorks('trpg')" class="tab-btn px-4 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black hover:text-black transition" data-filter="trpg">TRPG / SCENARIO</button>
+          <button onclick="filterWorks('voice')" class="tab-btn px-4 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black hover:text-black transition" data-filter="voice">VOICE / AUDIO</button>
+        </div>
+      </div>
+
+      <!-- Works Cards Grid -->
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6" id="works-grid">
+        <div class="work-card bg-white border-2 border-zinc-200 flex flex-col hover:border-black transition" data-category="game">
+          <div class="h-48 bg-zinc-100 border-b border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium">
+            [ゲーム ティザー画像]
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-black bg-zinc-100 border border-zinc-300 px-2 py-0.5 uppercase">Indie Game (Steam)</span>
+              <h3 class="text-base md:text-lg font-bold text-black mt-3 mb-2">新作ダンジョンRPGプロジェクト</h3>
+              <p class="text-zinc-600 text-xs leading-relaxed mb-6">
+                ドット絵と独自のフレーバー調合システムを掛け合わせたPC向けローグライクRPG。現在Steamリリースに向けて開発中。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs font-bold border-t border-zinc-200 pt-4">
+              <span class="text-zinc-400">In Development...</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card bg-white border-2 border-zinc-200 flex flex-col hover:border-black transition" data-category="trpg">
+          <div class="h-48 bg-zinc-100 border-b border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium">
+            [シナリオ トレーラー画像]
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-black bg-zinc-100 border border-zinc-300 px-2 py-0.5 uppercase">Emoklore TRPG</span>
+              <h3 class="text-base md:text-lg font-bold text-black mt-3 mb-2">オリジナルTRPGシナリオ各種</h3>
+              <p class="text-zinc-600 text-xs leading-relaxed mb-6">
+                ジュブナイルホラーや都市伝説をテーマにしたシナリオ、および専用ココフォリア部屋素材をパッケージ化して展開中。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs font-bold border-t border-zinc-200 pt-4">
+              <a href="#" class="text-black hover:text-zinc-500 transition">BOOTH ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-card bg-white border-2 border-zinc-200 flex flex-col hover:border-black transition" data-category="voice">
+          <div class="h-48 bg-zinc-100 border-b border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium">
+            [ボイス作品 ジャケット画像]
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-black bg-zinc-100 border border-zinc-300 px-2 py-0.5 uppercase">Situation Voice</span>
+              <h3 class="text-base md:text-lg font-bold text-black mt-3 mb-2">オリジナル音声作品シリーズ</h3>
+              <p class="text-zinc-600 text-xs leading-relaxed mb-6">
+                所属タレントによるシチュエーションボイスや日常サポート音声パックの企画・脚本・音響編集・販売。
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-4 text-xs font-bold border-t border-zinc-200 pt-4">
+              <a href="#" class="text-black hover:text-zinc-500 transition">BOOTH ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 md:py-20 px-5 sm:px-6 max-w-4xl mx-auto">
+    <div class="mb-8 md:mb-10">
+      <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Studio Profile</span>
+      <h2 class="text-2xl md:text-3xl font-black text-black mt-1">ABOUT US</h2>
+    </div>
+    <div class="bg-white border-2 border-black">
+      <dl class="divide-y divide-zinc-200 text-xs sm:text-sm">
+        <div class="p-5 sm:p-6 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="font-bold text-zinc-500">スタジオ名</dt>
+          <dd class="mt-1.5 sm:mt-0 sm:col-span-2 text-black font-bold">StudioAmpersand（表記：Ampersand.std）</dd>
+        </div>
+        <div class="p-5 sm:p-6 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="font-bold text-zinc-500">代表</dt>
+          <dd class="mt-1.5 sm:mt-0 sm:col-span-2 text-black font-medium">（ここに代表者名を記載）</dd>
+        </div>
+        <div class="p-5 sm:p-6 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="font-bold text-zinc-500">事業内容</dt>
+          <dd class="mt-1.5 sm:mt-0 sm:col-span-2 text-zinc-700 leading-relaxed">
+            ・VTuber・声優のタレントマネジメントおよびプロデュース業務<br>
+            ・音声作品・デジタルコンテンツの企画、制作、販売<br>
+            ・インディーゲームの企画、開発、パブリッシング<br>
+            ・TRPGシナリオ、マーダーミステリー等の企画制作
+          </dd>
+        </div>
+        <div class="p-5 sm:p-6 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="font-bold text-zinc-500">公式リンク</dt>
+          <dd class="mt-2 sm:mt-0 sm:col-span-2 flex flex-wrap gap-5 font-bold">
+            <a href="#" class="text-black hover:underline">X (Twitter) ↗</a>
+            <a href="#" class="text-black hover:underline">BOOTH ↗</a>
+            <a href="#" class="text-black hover:underline">YouTube ↗</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Guideline Section -->
+  <section id="guideline" class="py-16 px-5 sm:px-6 max-w-4xl mx-auto border-t border-zinc-200">
+    <div class="mb-8">
+      <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Terms &amp; Policy</span>
+      <h2 class="text-2xl font-black text-black mt-1">GUIDELINE</h2>
+    </div>
+    <div class="bg-zinc-50 border border-zinc-200 p-5 sm:p-8 text-xs sm:text-sm text-zinc-700 space-y-4 leading-relaxed">
+      <p>StudioAmpersand（以下スコープ外含む）の所属タレントおよび制作コンテンツに関する二次創作や配信活動については、以下のガイドラインを遵守いただくようお願いいたします。</p>
+      <ul class="list-disc pl-5 space-y-2.5 text-zinc-600">
+        <li><strong class="text-black">ファンアート・切り抜き動画：</strong> タレントのイメージを著しく損なうもの、公序良俗に反するものを除き、原則として歓迎いたします。</li>
+        <li><strong class="text-black">TRPG・マダミス配信：</strong> 各シナリオの規約ページに記載されたネタバレ配慮ルール（ワンクッション表記など）を守って配信・動画化を行ってください。</li>
+        <li><strong class="text-black">有料音声・限定コンテンツ：</strong> BOOTH等で販売している有料ボイスパックや限定コンテンツの無断転載・再配布は固く禁じます。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 md:py-20 px-5 sm:px-6 max-w-4xl mx-auto text-center">
+    <div class="bg-black text-white p-6 sm:p-10 md:p-14 shadow-[10px_10px_0px_0px_rgba(228,228,231,1)]">
+      <h2 class="text-2xl md:text-3xl font-black text-white mb-4 tracking-tight">CONTACT</h2>
+      <p class="text-zinc-300 text-xs sm:text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+        所属タレントへの案件・PRご依頼、コラボのお誘い、シナリオ・音声制作のご相談など、お気軽にお問い合わせください。通常3営業日以内に担当者よりご返信いたします。
+      </p>
+      <a href="https://docs.google.com/forms/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-block px-6 sm:px-10 py-4 bg-white text-black font-black text-xs sm:text-sm tracking-wider hover:bg-zinc-200 transition">
+        お問い合わせフォームを開く（Google Form） ↗
+      </a>
+      <p class="text-[11px] sm:text-xs text-zinc-400 mt-6">
+        ※フォームが利用できない場合は <span class="text-white select-all">info@example.com</span> まで直接ご連絡ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 px-4 text-center text-xs text-zinc-500 border-t border-zinc-200">
+    <p>&copy; 2026 StudioAmpersand / Ampersand.std. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function filterWorks(category) {
+      const cards = document.querySelectorAll('.work-card');
+      const buttons = document.querySelectorAll('.tab-btn');
+
+      buttons.forEach(btn => {
+        if (btn.dataset.filter === category) {
+          btn.classList.remove('bg-white', 'border', 'border-zinc-300', 'text-zinc-600');
+          btn.classList.add('bg-black', 'text-white');
+        } else {
+          btn.classList.remove('bg-black', 'text-white');
+          btn.classList.add('bg-white', 'border', 'border-zinc-300', 'text-zinc-600');
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    }
+
+    function closeMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      menu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
