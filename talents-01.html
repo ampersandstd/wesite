@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>靑山羊くろすけ | StudioAmpersand Talent Profile</title>
+  <link rel="icon" type="image/png" href="Ampersand_logo__.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased selection:bg-black selection:text-white">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-zinc-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <img src="Ampersand_logo__.png" alt="Ampersand.std Logo" class="w-10 h-10 object-contain border border-zinc-200 group-hover:border-black transition">
+        <div class="flex flex-col">
+          <span class="text-sm sm:text-base font-black tracking-tight text-black leading-none">Ampersand.std</span>
+          <span class="text-[10px] text-zinc-500 tracking-widest uppercase mt-0.5">StudioAmpersand</span>
+        </div>
+      </a>
+      <a href="index.html#talents" class="text-xs sm:text-sm font-bold text-zinc-600 hover:text-black transition flex items-center gap-1">
+        ← タレント一覧へ戻る
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Profile Section -->
+  <main class="pt-24 pb-20 px-5 sm:px-6 max-w-6xl mx-auto">
+    <!-- パンくずリスト -->
+    <nav class="text-xs font-bold text-zinc-400 mb-8 flex items-center gap-2">
+      <a href="index.html" class="hover:text-black">HOME</a>
+      <span>/</span>
+      <a href="index.html#talents" class="hover:text-black">TALENTS</a>
+      <span>/</span>
+      <span class="text-black">靑山羊くろすけ</span>
+    </nav>
+     <!-- ★ここが消えていた親タグです！（この1行で左右の横並びが復活します） -->
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
+
+      <!-- 左カラム：全身立ち絵 & 衣装切り替え（PCでは5列分の幅） -->
+      <div class="md:col-span-5 bg-zinc-50 border-2 border-zinc-200 p-6 flex flex-col items-center justify-center relative">
+        
+        <!-- ★1. 立ち絵画像（初期表示したい「通常衣装」のファイル名を src に入れます） -->
+        <img id="talent-visual" src="KV__260905.png" alt="立ち絵" class="w-full h-[420px] sm:h-[500px] object-contain">
+
+        <!-- ★2. 切り替えボタン（シングルクォーテーションの中に、それぞれの画像ファイル名を入れます） -->
+        <div class="flex gap-2 mt-4 w-full">
+          <button id="btn-normal" onclick="changeImage('KV__260905.png', true)" class="flex-1 py-2 text-xs font-bold bg-black text-white transition">通常衣装</button>
+          <button id="btn-ref" onclick="changeImage('01.png', false)" class="flex-1 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black transition">Live2D</button>
+        </div>
+      </div>
+ 
+      <!-- 右カラム：詳細プロフィール & ボイスサンプル（PCでは7列分の幅） -->
+      <div class="md:col-span-7 space-y-8">
+        <div>
+          <span class="text-xs font-bold text-black bg-zinc-100 border border-zinc-300 px-3 py-1 uppercase">VTuber / Voice Actor</span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-black mt-4 mb-1">靑山羊くろすけ</h1>
+          <p class="text-sm font-bold text-zinc-400 tracking-widest uppercase">AOYAGI KUROSUKE</p>
+        </div>
+
+        <!-- キャッチコピー・紹介文 -->
+        <div class="border-l-4 border-black pl-4 py-1">
+          <p class="text-base sm:text-lg font-bold text-black">
+            「くすっと笑えるような幸せの時間を声でお届けしたい靑い山羊です！」
+          </p>
+        </div>
+
+        <p class="text-zinc-600 text-sm sm:text-base leading-relaxed">
+          StudioAmpersand所属のVTuber／ボイスキャスト。シチュエーションボイスや音声作品を中心に、YouTubeでの定期配信でも活動中。落ち着きのあるトーンから距離感の近いナチュラルな演技まで幅広く対応可能です。
+        </p>
+
+        <!-- SNS・プラットフォームリンク -->
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.youtube.com/channel/UCa_wKZK1NbWXgqbQdYwT2PQ" target="_blank" class="px-5 py-2.5 bg-black text-white text-xs font-bold hover:bg-zinc-800 transition">YouTube Channel ↗</a>
+          <a href="https://x.com/Aoyagi_Kurosuke" target="_blank" class="px-5 py-2.5 bg-white border-2 border-black text-black text-xs font-bold hover:bg-zinc-100 transition">X (Twitter) ↗</a>
+          <a href="http://aoyagi-96suke.booth.pm/" target="_blank" class="px-5 py-2.5 bg-white border-2 border-black text-black text-xs font-bold hover:bg-zinc-100 transition">BOOTH（ボイス販売） ↗</a>
+        </div>
+
+        <!-- ボイスサンプル再生枠（音声ファイルを置けばそのまま再生可能！） -->
+        <div class="bg-zinc-50 border-2 border-zinc-200 p-5 space-y-4">
+          <h2 class="text-xs font-black tracking-widest text-black uppercase">VOICE SAMPLE / ボイスサンプル</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white border border-zinc-200 p-3">
+              <p class="text-xs font-bold text-black mb-2">01. 自己紹介・フリートーク</p>
+              <audio controls class="w-full h-8">
+                <source src="sample1.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+            <div class="bg-white border border-zinc-200 p-3">
+              <p class="text-xs font-bold text-black mb-2">02. シチュエーションセリフ</p>
+              <audio controls class="w-full h-8">
+                <source src="sample2.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- プロフィールデータ表 -->
+        <div>
+          <h2 class="text-xs font-black tracking-widest text-zinc-400 uppercase mb-3">PROFILE DATA</h2>
+          <dl class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-zinc-200 border-2 border-zinc-200 text-xs sm:text-sm">
+            <div class="bg-white p-4">
+              <dt class="text-zinc-400 font-bold text-xs">誕生日</dt>
+              <dd class="text-black font-bold mt-1">9月6日</dd>
+            </div>
+            <div class="bg-white p-4">
+              <dt class="text-zinc-400 font-bold text-xs">好き・特技</dt>
+              <dd class="text-black font-bold mt-1">歌・ゲーム・映画・ものづくり</dd>
+            </div>
+            <div class="bg-white p-4">
+              <dt class="text-zinc-400 font-bold text-xs">総合・配信タグ</dt>
+              <dd class="text-black font-bold mt-1">#ヤギさんこちら</dd>
+            </div>
+            <div class="bg-white p-4">
+              <dt class="text-zinc-400 font-bold text-xs">ファンアートタグ</dt>
+              <dd class="text-black font-bold mt-1">#あおやぎアート</dd>
+            </div>
+            <div class="bg-white p-4 sm:col-span-2">
+              <dt class="text-zinc-400 font-bold text-xs">キャラクターデザイン・イラストレーター</dt>
+              <dd class="text-black font-bold mt-1">空地 様　　<a href="https://x.com/xxx_AKC" class="text-black hover:underline">X (Twitter) ↗</a></dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- 出演・リリース実績セクション -->
+    <section class="mt-20 pt-16 border-t border-zinc-200">
+      <div class="mb-8">
+        <span class="text-xs font-bold tracking-widest text-zinc-400 uppercase">Discography &amp; Achievements</span>
+        <h2 class="text-2xl font-black text-black mt-1">ピックアップ作品・実績</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="border-2 border-zinc-200 p-5">
+          <span class="text-[10px] font-bold bg-zinc-100 border border-zinc-300 px-2 py-0.5">VOICE PACK</span>
+          <h3 class="text-sm font-bold text-black mt-3 mb-2">シチュエーションボイス Vol.1</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed mb-4">BOOTHにて頒布中のオリジナル音声パック。収録時間〇〇分・全〇トラック。</p>
+          <a href="#" class="text-xs font-bold text-black hover:underline">作品ページを見る ↗</a>
+        </div>
+        <div class="border-2 border-zinc-200 p-5">
+          <span class="text-[10px] font-bold bg-zinc-100 border border-zinc-300 px-2 py-0.5">MOVIE</span>
+          <h3 class="text-sm font-bold text-black mt-3 mb-2">代表動画・ティザーPV</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed mb-4">初配信アーカイブや歌ってみた動画、ボイスドラマ出演作など。</p>
+          <a href="#" class="text-xs font-bold text-black hover:underline">YouTubeで再生 ↗</a>
+        </div>
+        <div class="border-2 border-zinc-200 p-5">
+          <span class="text-[10px] font-bold bg-zinc-100 border border-zinc-300 px-2 py-0.5">COLLAB / PR</span>
+          <h3 class="text-sm font-bold text-black mt-3 mb-2">案件・ゲスト出演実績</h3>
+          <p class="text-xs text-zinc-600 leading-relaxed mb-4">インディーゲームPR配信、外部ボイスドラマ作品へのCV参加など随時受付中。</p>
+          <a href="index.html#contact" class="text-xs font-bold text-black hover:underline">ご依頼はこちら ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 個別お問い合わせバナー -->
+    <section class="mt-16 bg-black text-white p-8 sm:p-10 text-center">
+      <h2 class="text-xl sm:text-2xl font-black mb-3">このタレントへのお仕事・コラボのご依頼</h2>
+      <p class="text-zinc-300 text-xs sm:text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+        PR配信、音声収録（CV・ナレーション）、イベント出演等のご相談はStudioAmpersand総合窓口にて承っております。
+      </p>
+      <a href="index.html#contact" class="inline-block px-8 py-3.5 bg-white text-black font-black text-xs sm:text-sm hover:bg-zinc-200 transition">
+        お問い合わせフォームへ進む →
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 px-4 text-center text-xs text-zinc-500 border-t border-zinc-200">
+    <p>&copy; 2026 StudioAmpersand / Ampersand.std. All Rights Reserved.</p>
+  </footer>
+<!-- ★ここに以下のスクリプトを追加！ -->
+  <script>
+    function changeImage(imageFile, isNormal) {
+      // 画像を差し替える
+      document.getElementById('talent-visual').src = imageFile;
+
+      // ボタンの色（黒塗り・白枠）を切り替える
+      const btnNormal = document.getElementById('btn-normal');
+      const btnRef = document.getElementById('btn-ref');
+
+      if (isNormal) {
+        btnNormal.className = "flex-1 py-2 text-xs font-bold bg-black text-white transition";
+        btnRef.className = "flex-1 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black transition";
+      } else {
+        btnNormal.className = "flex-1 py-2 text-xs font-bold bg-white border border-zinc-300 text-zinc-600 hover:border-black transition";
+        btnRef.className = "flex-1 py-2 text-xs font-bold bg-black text-white transition";
+      }
+    }
+  </script>
+</body>
+</html>
