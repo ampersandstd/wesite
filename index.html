@@ -369,19 +369,21 @@
         `;
       }).join('');
 
-      // 2. Talentsの描画
+     // 2. Talentsの描画
       const talentsContainer = document.getElementById('talents-grid');
       talentsContainer.innerHTML = talentsData.map(t => {
+        // ★ object-cover に object-top を組み合わせて「頭・顔基準」でトリミング
         const imgHtml = t.image
-  ? `<img src="${t.image}" alt="${t.nameJa}" class="w-full h-full object-contain p-2">`
-  : `[${t.nameJa} none]`;
+          ? `<img src="${t.image}" alt="${t.nameJa}" class="w-full h-full object-cover object-top">`
+          : `[${t.nameJa} none]`;
         const linksHtml = t.links.map(l =>
           `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">${l.label} ↗</a>`
         ).join('');
 
         return `
           <div class="bg-white border-2 border-zinc-200 hover:border-black transition flex flex-col sm:flex-row overflow-hidden shadow-sm group">
-            <div class="sm:w-2/5 h-80 sm:h-auto bg-zinc-100 border-b sm:border-b-0 sm:border-r border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium p-4 text-center overflow-hidden">
+            <!-- ★スマホ時の高さを h-72、PC時を sm:h-auto sm:min-h-[360px] に設定 -->
+            <div class="sm:w-2/5 h-72 sm:h-auto sm:min-h-[360px] bg-zinc-100 border-b sm:border-b-0 sm:border-r border-zinc-200 flex items-center justify-center text-zinc-400 text-xs font-medium text-center overflow-hidden">
               ${imgHtml}
             </div>
             <div class="sm:w-3/5 p-6 md:p-8 flex flex-col justify-between">
