@@ -373,8 +373,8 @@
       const talentsContainer = document.getElementById('talents-grid');
       talentsContainer.innerHTML = talentsData.map(t => {
         const imgHtml = t.image
-          ? `<img src="${t.image}" alt="${t.nameJa}" class="w-full h-full object-cover">`
-          : `[${t.nameJa} none]`;
+  ? `<img src="${t.image}" alt="${t.nameJa}" class="w-full h-full object-cover object-top">`
+  : `[${t.nameJa} none]`;
         const linksHtml = t.links.map(l =>
           `<a href="${l.url}" target="_blank" rel="noopener noreferrer" class="hover:text-black transition">${l.label} ↗</a>`
         ).join('');
